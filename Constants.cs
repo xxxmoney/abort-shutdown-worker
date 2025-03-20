@@ -2,5 +2,5 @@
 
 public class Constants
 {
-    public static readonly TimeSpan RunTimeout = TimeSpan.FromMinutes(5);
+    public static readonly TimeSpan RunTimeout = TimeSpan.FromMinutes(1);
 }
