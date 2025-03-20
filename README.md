@@ -5,12 +5,13 @@
 
 ## Quick start
  - Build the project
- - Open an elevated command prompt (Run as Administrator)
  - Navigate to the directory containing the compiled executable (e.g., bin\Release\net8.0)
- - Run: AbortShutdownWorker.exe install (to install)
- - Run: AbortShutdownWorker.exe start (to start)
- - Run: AbortShutdownWorker.exe uninstall (to uninstall)
- - Run services.msc command to check Windows Services
+ - Copy the folder with the executable to a location of your choice
+ - Open a command prompt as an administrator
+ - Navigate to the directory
+ - Execute `sc.exe create "AbortShutdownWorker" binpath= "C:\Path\To\AbortShutdownWorker.exe"`
+   - This will create a service named "AbortShutdownWorker" that will run the executable
+   - You can further configure the service when running the `services.msc`
 
 ## Technology
  - C# .NET 8

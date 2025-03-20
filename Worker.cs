@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace AbortShutdownWorker;
 
 public class Worker : BackgroundService
@@ -17,8 +19,10 @@ public class Worker : BackgroundService
             {
                 logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
             }
+            
+            Process.Start("shutdown", "/a");
 
-            await Task.Delay(1000, stoppingToken);
+            await Task.Delay(Constants.RunTimeout, stoppingToken);
         }
     }
 }
